@@ -68,9 +68,37 @@ public class LinkedList {
         prev.next = newNode;
         
     }
-    
       
-    
+    public void insertAtposition(int position, int data) {
+        Node newNode = new Node(data);
+        Node currentNode = head;
+        
+        int index1 =0;
+        
+        while(index1 < position-1) {
+            currentNode = currentNode.next;
+            index1++;
+        }
+        
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;   
+    }
+   
+    public void remove(int position) {
+        Node currentNode = head;
+        int counter =0;
+        if(head == null) {
+            System.out.println("list is empty");
+            return;
+        }
+        while(counter < position-1) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+        
+        currentNode.next = currentNode.next.next;
+        }
+
     // display() will display all the nodes present in the list
     public void display() {
      // Node current will point to head
@@ -97,7 +125,9 @@ public class LinkedList {
         ll.addNode(3);
         ll.addNode(4);
         ll.prepend(0);
+        ll.remove(3);
         ll.insertAtParticularIndex(2,10);
+        ll.insertAtposition(3,1);
         
         // display the nodes present in the list
         ll.display();
