@@ -1,4 +1,5 @@
 /*
+left rotation
 Reversal algorithm for array rotation
 Write a function rotate(arr[], d, n) that rotates 
 arr[] of size n by d elements.
