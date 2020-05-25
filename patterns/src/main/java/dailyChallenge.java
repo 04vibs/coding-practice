@@ -33,7 +33,8 @@ public class dailyChallenge {
             System.out.print(j);
             }
             System.out.println(" ");
-        }
+        } 
+         
         // 3rd component
         System.out.println("0");
        
@@ -56,6 +57,10 @@ public class dailyChallenge {
             System.out.print(j);
             }
             System.out.println(" ");
+        }
+        
+        for(int i=1;i<=n;i++){
+            
         }
     }
 }
