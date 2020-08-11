@@ -1,0 +1,87 @@
+//hollow rhombus
+#include<iostream>
+using namespace std;
+int main() {
+	int n;
+	cin>>n;
+	int sp=n-1;
+    for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=sp;j++)
+		{
+			cout<<' ';
+		}
+		sp--;
+		if(i==1||i==n)
+		{
+			for(int j=1;j<=n;j++)
+			{
+				cout<<'*';
+			}
+		}
+		else
+		{
+			for(int j=1;j<=n;j++)
+			{
+				if(j==1||j==n)
+				{
+					cout<<'*';
+				}
+				else
+				{
+					cout<<' ';
+				}
+			}
+		}
+		cout<<endl;
+	}
+	return 0;
+}
+
+//incrediblem hulk
+//incredible hulk
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int inc_hulk(int n,int i,int step)
+{
+	//base case
+	if(i==n)
+	{
+		return step;
+	}
+	
+	int power=0;
+	
+	while((i+pow(2,power))<=n)
+	{
+		power++;
+		if((i+pow(2,power))>n)
+		{
+			i=i+pow(2,power-1);
+			step++;
+		}
+	}
+	
+	//recursive call
+	int aage_ke_steps = inc_hulk(n,i,step);
+	
+	return aage_ke_steps;
+}
+
+int main()
+{
+	int t;
+	cin>>t;
+
+	for(int i=0;i<t;i++)
+	{
+	int n;
+	cin>>n;
+	int steps = inc_hulk(n,0,0);
+	cout<<steps<<endl;
+	}
+
+	return 0;
+}

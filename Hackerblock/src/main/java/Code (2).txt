@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+void reverse_array(int a[],int n,int i,int result[],int k)
+{
+    	if(i==n-1)
+    	{
+    		result[k] = a[i];
+    		return ;
+		}
+		
+		result[k] = a[i];
+		
+		reverse_array(a,n,i+1,result,k-1);
+		
+		return ;
+}
+int main()
+{
+	int n;
+	cin>>n;
+	int a[100],result[100];
+	for(int i=0;i<n;i++)
+	{
+		cin>>a[i];
+	}
+	
+	reverse_array(a,n,0,result,n-1);
+	
+	for(int i=0;i<n;i++)
+	{
+		cout<<result[i]<<' ';
+	}
+        
+        return 0;
+}
